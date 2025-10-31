@@ -70,6 +70,7 @@ sudo nmcli con modify dgsp wifi-sec.psk "0542795678"
 3) 자동 연결 + 우선순위 10 \
 sudo nmcli con modify dgsp connection.autoconnect yes \
 sudo nmcli con modify dgsp connection.autoconnect-priority 10 \
+nmcli con show dgsp | grep -E 'id:|ssid|autoconnect|priority|key-mgmt'
 
 # 4. USB 설정
 
@@ -85,6 +86,7 @@ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="04d8", ATTRS{idProduct
 (VID/PID는 16진수 소문자 4자리로)
 
 적용: sudo udevadm control --reload-rules && sudo udevadm trigger
+
 
 
 
