@@ -60,16 +60,16 @@ WantedBy=multi-user.target
 
 # 3. NetworkManager Setup
 
-1) 프로파일 생성 (AP가 없어도 됨)
+1) 프로파일 생성 (AP가 없어도 됨) \
 sudo nmcli con add type wifi ifname wlan0 con-name dgsp ssid "PIAI_Research_2"
 
-2) 보안(WPA2-PSK) 설정
-sudo nmcli con modify dgsp wifi-sec.key-mgmt wpa-psk
+2) 보안(WPA2-PSK) 설정 \
+sudo nmcli con modify dgsp wifi-sec.key-mgmt wpa-psk \
 sudo nmcli con modify dgsp wifi-sec.psk "0542795678"
 
-3) 자동 연결 + 우선순위 10
-sudo nmcli con modify dgsp connection.autoconnect yes
-sudo nmcli con modify dgsp connection.autoconnect-priority 10
+3) 자동 연결 + 우선순위 10 \
+sudo nmcli con modify dgsp connection.autoconnect yes \
+sudo nmcli con modify dgsp connection.autoconnect-priority 10 \
 
 # 4. USB 설정
 
@@ -85,6 +85,7 @@ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="04d8", ATTRS{idProduct
 (VID/PID는 16진수 소문자 4자리로)
 
 적용: sudo udevadm control --reload-rules && sudo udevadm trigger
+
 
 
 
